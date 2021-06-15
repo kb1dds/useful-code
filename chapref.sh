@@ -11,7 +11,7 @@ grep -o '\\label{[a-zA-Z:_0-9]*}' $1.tex | cut -d '{' -f 2 | cut -d'}' -f 1 | so
 # Want listing of every reference not defined as a label
 for ref in `diff -d refs.txt labels.txt | grep '<' | cut -d ' ' -f 2 | grep -v 'chap:'`
 do
-    grep '\label{'$ref'}' *_chap.tex | grep '\label'
+    grep '\label{'$ref'}' *_chap.tex
 done
 
 # Clean up
